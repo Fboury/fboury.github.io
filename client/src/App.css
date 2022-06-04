@@ -1,0 +1,23 @@
+.Login {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 100px;
+}
+.Navigation {
+  margin-top: 140px;
+}
+.Notification div {
+  z-index: 9999;
+}
+
+div .bg-light {
+  background-color: beige !important;
+}
+.App-link {
+  color: #61dafb;
+}
+
+.title-page {
+  text-align: center;
+}
