@@ -43,10 +43,10 @@ app.use(function(req, res, next) {
 //Définition du routeur
 const router = express.Router();
 app.use("/user", router);
-app.use("/circuit", router);
+app.use("/sport", router);
 
 require(__dirname + "/controllers/userController")(router);
-require(__dirname + "/controllers/circuitController")(router);
+require(__dirname + "/controllers/sportController")(router);
 
 //Définition et mise en place du port d'écoute
 const port = 8800;
