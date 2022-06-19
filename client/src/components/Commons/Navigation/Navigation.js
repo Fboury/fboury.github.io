@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Navbar, Nav, Container, Button, ButtonGroup } from "react-bootstrap";
-import logo from "../../../logo.png";
+import logo from "../../../stitch.png";
 import userApi from "../../../API/userApi";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../../../redux/reducers/userReducer";
 import userActions from "../../../redux/actions/userActions";
@@ -11,6 +11,9 @@ import { commonConstants } from "../../../constants/commonConstants";
 
 export function Navigation() {
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log("location", location.pathname);
+
   const dispatch = useDispatch();
   const userConnected = userApi.isAuth();
   const currentUser = useSelector(getUser);
@@ -47,45 +50,30 @@ export function Navigation() {
     (currentUser.droitsCreation || currentUser.droitsEdition);
   return (
     <div className="Navigation">
-      <Navbar fixed="top" expand="lg" bg="light" variant="light">
-        <Container>
-          <Nav className="me-auto">
+      <Navbar fixed="top" expand="lg" className="navbar-site">
+        <Container className="container-nav">
+          <Navbar.Brand>
+            <img src={logo} className="imageLogo" alt="logo" />
+          </Navbar.Brand>
+          <Nav className="me-auto" activeKey={location.pathname} fill>
             <Nav.Link href="/">Accueil</Nav.Link>
-            <Nav.Link href="/sports">Vacances</Nav.Link>
-            <Nav.Link href="/sports">Projets</Nav.Link>
+            <Nav.Link href="/vacances">Vacances</Nav.Link>
+            <Nav.Link href="/projets">Projets</Nav.Link>
             <Nav.Link href="/sports">Sport</Nav.Link>
+            <Nav.Link href="/livres">Livres</Nav.Link>
           </Nav>
-          <ButtonGroup vertical>
-            <Button
-              className="mb-2"
-              variant="outline-dark"
-              size="sm"
-              onClick={handleClickConnexion}
-            >
-              {userConnected ? "Deconnexion" : "Se connecter"}
-            </Button>
-            {!userConnected && (
-              <Button
-                variant="outline-dark"
-                size="sm"
-                onClick={() => navigate("/signup")}
-              >
-                S'inscrire
-              </Button>
-            )}
-            {displayDashboardButton && (
-              <Button
-                variant="outline-dark"
-                size="sm"
-                onClick={() => navigate("/dashboard")}
-              >
-                Accéder au dashboard
-              </Button>
-            )}
-          </ButtonGroup>
-          {currentUser && Object.keys(currentUser).length !== 0 && (
+          <Button
+            className="mb-2"
+            variant="outline-dark"
+            size="sm"
+            onClick={handleClickConnexion}
+          >
+            Ajouter un article
+          </Button>
+
+          {/* {currentUser && Object.keys(currentUser).length !== 0 && (
             <p className="pl-4">{`Bonjour ${currentUser.nomUser}`}</p>
-          )}
+          )} */}
         </Container>
       </Navbar>
     </div>

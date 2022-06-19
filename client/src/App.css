@@ -11,11 +11,25 @@
   z-index: 9999;
 }
 
-div .bg-light {
-  background-color: beige !important;
+.navbar-site {
+  background-color: #e6d1f2;
+  opacity: 0.8;
+}
+.container-nav {
+  column-gap: 40px;
 }
 .App-link {
   color: #61dafb;
+}
+
+.container-nav > .navbar-nav > .nav-link {
+  color: black !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff;
+  background-color: #b19cd8; /* add background-color to active links */
 }
 
 .title-page {
