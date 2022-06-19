@@ -23,68 +23,36 @@ export const formConstants = {
     libelleChamp: "Droits édition",
     nomChamp: "droitsEdition"
   },
-  nomPilote: {
-    libelleChamp: "Nom du pilote",
-    nomChamp: "nomPilote"
+  titreSeance: {
+    libelleChamp: "Titre de la séance",
+    nomChamp: "titreSeance"
   },
-  ecuriePilote: {
-    libelleChamp: "Écurie du pilote",
-    nomChamp: "ecuriePilote"
+  typeSeance: {
+    libelleChamp: "Type de la séance",
+    nomChamp: "typeSeance"
   },
-  anneeEnCours: {
-    libelleChamp: "Année en cours",
-    nomChamp: "anneeEnCours"
+  duree: {
+    libelleChamp: "Durée de la séance",
+    nomChamp: "duree"
   },
-  points: {
-    libelleChamp: "Nombre de points",
-    nomChamp: "points"
+  difficulte: {
+    libelleChamp: "Difficulté de la séance",
+    nomChamp: "difficulte"
   },
-  nationalite: {
-    libelleChamp: "Nationalité du pilote",
-    nomChamp: "nationalite"
+  imageTrace: {
+    libelleChamp: "Image du tracé (facultatif)",
+    nomChamp: "imageTrace"
   },
-  photoPilote: {
-    libelleChamp: "Photo du pilote",
-    nomChamp: "photoPilote"
+  dateSeance: {
+    libelleChamp: "Date de la séance",
+    nomChamp: "dateSeance"
   },
-  nomCircuit: {
-    libelleChamp: "Nom du circuit",
-    nomChamp: "nomCircuit"
+  meteo: {
+    libelleChamp: "Météo au cours de la séance",
+    nomChamp: "dateSeance"
   },
-  paysCircuit: {
-    libelleChamp: "Pays du circuit",
-    nomChamp: "paysCircuit"
-  },
-  anneeEnCours: {
-    libelleChamp: "Année en cours",
-    nomChamp: "anneeEnCours"
-  },
-  descriptionCircuit: {
-    libelleChamp: "Description du circuit",
-    nomChamp: "descriptionCircuit"
-  },
-  typeCircuit: {
-    libelleChamp: "Type du circuit",
-    nomChamp: "typeCircuit"
-  },
-  nomEcurie: {
-    libelleChamp: "Nom de l'écurie",
-    nomChamp: "nomEcurie"
-  },
-  pilotesEcurie: {
-    libelleChamp: "Pilotes de l'écurie",
-    nomChamp: "pilotesEcurie"
-  },
-  nomPatron: {
-    libelleChamp: "Nom du patron de l'écurie",
-    nomChamp: "nomPatron"
-  },
-  moteur: {
-    libelleChamp: "Constructeur moteur",
-    nomChamp: "moteur"
-  },
-  classement: {
-    libelleChamp: "Classement constructeurs",
-    nomChamp: "classement"
+  sportifs: {
+    libelleChamp: "Qui était la ?",
+    nomChamp: "sportifs"
   }
 };

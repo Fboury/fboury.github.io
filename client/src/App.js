@@ -8,11 +8,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { PrivateRoute } from "./PrivateRoute.js";
 import { Navigation } from "./components/Commons/Navigation/Navigation.js";
 import { Accueil } from "./components/Accueil/Accueil.js";
-import { Circuits } from "./components/Circuits/Circuits.js";
+import { Sports } from "./components/Sports/Sports.js";
 import { useSelector } from "react-redux";
 import { getNotifications } from "./redux/reducers/index.js";
 import Notification from "./components/Commons/Notifications/Notification.js";
-import { CreationCircuit } from "./components/Circuits/CreationCircuit.js";
+import { CreationSport } from "./components/Sports/CreationSport.js";
 
 export function App() {
   const notifications = useSelector(getNotifications);
@@ -26,12 +26,8 @@ export function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
 
-        <Route exact path="/circuits" element={<Circuits />} />
-        <Route
-          exact
-          path="/circuits/creer-circuit"
-          element={<CreationCircuit />}
-        />
+        <Route exact path="/sports" element={<Sports />} />
+        <Route exact path="/sports/creer-sport" element={<CreationSport />} />
         <Route
           path="/dashboard"
           element={

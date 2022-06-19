@@ -51,9 +51,9 @@ export function Navigation() {
         <Container>
           <Nav className="me-auto">
             <Nav.Link href="/">Accueil</Nav.Link>
-            <Nav.Link href="/circuits">Vacances</Nav.Link>
-            <Nav.Link href="/circuits">Projets</Nav.Link>
-            <Nav.Link href="/circuits">Sport</Nav.Link>
+            <Nav.Link href="/sports">Vacances</Nav.Link>
+            <Nav.Link href="/sports">Projets</Nav.Link>
+            <Nav.Link href="/sports">Sport</Nav.Link>
           </Nav>
           <ButtonGroup vertical>
             <Button

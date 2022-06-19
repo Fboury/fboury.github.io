@@ -11,58 +11,45 @@ import {
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-import circuitActions from "../../redux/actions/circuitActions";
-import { getCircuits } from "../../redux/reducers/circuitReducer";
+import sportActions from "../../redux/actions/sportActions";
+import { getSports } from "../../redux/reducers/sportReducer";
 import configHelper from "../../helpers/configHelper";
 
-export function Circuits() {
+export function Sports() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [anneeEnCours, setAnneeEnCours] = useState("2021");
   const [annees] = useState(configHelper.generateArrayOfYears());
 
-  const circuits = useSelector(getCircuits);
+  const sports = useSelector(getSports);
 
   const handleChangeAnnee = event => setAnneeEnCours(event.target.value);
 
   useEffect(() => {
-    dispatch(circuitActions.getCircuits({ anneeEnCours }));
+    dispatch(sportActions.getSports({ anneeEnCours }));
   }, [dispatch, anneeEnCours]);
 
-  const onClickCreate = () => navigate("creer-circuit");
+  const onClickCreate = () => navigate("creer-sport");
 
   return (
-    <div className="Circuits">
-      <h2 className="title-page">Circuits</h2>
+    <div className="Sports">
+      <h2 className="title-page">Sports</h2>
       <Container>
         <Row>
-          <Col md={2}>
-            <Form.Select
-              autoFocus
-              name="anneeEnCours"
-              value={anneeEnCours}
-              onChange={handleChangeAnnee}
-            >
-              {annees.map((annee, index) => (
-                <option key={index} value={annee.value}>
-                  {annee.label}
-                </option>
-              ))}
-            </Form.Select>
-          </Col>
+          <Col md={2}></Col>
           <Col md={{ span: 2, offset: 8 }}>
             <Button variant="outline-primary" onClick={onClickCreate}>
-              Créer un circuit
+              Créer un sport
             </Button>
           </Col>
         </Row>
         <Row className="mt-3">
           <Col>
             <ListGroup>
-              {circuits.map((circuit, index) => {
+              {sports.map((sport, index) => {
                 return (
                   <ListGroupItem key={index}>
-                    <p>{`${circuit.nomCircuit} - ${circuit.paysCircuit}`}</p>
+                    <p>{`${sport.nomSport} - ${sport.paysSport}`}</p>
                   </ListGroupItem>
                 );
               })}

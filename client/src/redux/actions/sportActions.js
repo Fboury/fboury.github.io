@@ -1,12 +1,12 @@
-import circuitApi from "../../API/circuitApi";
-import { circuitConstants } from "../../constants/circuitConstants";
+import sportApi from "../../API/sportApi";
+import { sportConstants } from "../../constants/sportConstants";
 import { commonConstants } from "../../constants/commonConstants";
 
-const createCircuit = (circuit, navigate) => dispatch => {
-  return circuitApi
-    .createCircuit(circuit)
+const createSport = (sport, navigate) => dispatch => {
+  return sportApi
+    .createSport(sport)
     .then(res => {
-      dispatch({ type: circuitConstants.CREATE_CIRCUIT, payload: res.data });
+      dispatch({ type: sportConstants.CREATE_SPORT, payload: res.data });
       dispatch({
         type: commonConstants.NOTIFICATION_HANDLING,
         payload: res
@@ -22,18 +22,18 @@ const createCircuit = (circuit, navigate) => dispatch => {
       console.log("test de l'erreur", err.response);
     });
 };
-const getCircuits = anneeEnCours => dispatch => {
-  return circuitApi
-    .getCircuits(anneeEnCours)
+const getSports = anneeEnCours => dispatch => {
+  return sportApi
+    .getSports(anneeEnCours)
     .then(res => {
       dispatch({
-        type: circuitConstants.GET_CIRCUITS,
-        payload: res.data.circuits
+        type: sportConstants.GET_SPORTS,
+        payload: res.data.sports
       });
     })
     .catch(err => {
       dispatch({
-        type: circuitConstants.GET_CIRCUITS,
+        type: sportConstants.GET_SPORTS,
         payload: []
       });
       dispatch({
@@ -45,8 +45,8 @@ const getCircuits = anneeEnCours => dispatch => {
     });
 };
 
-const circuitActions = {
-  createCircuit,
-  getCircuits
+const sportActions = {
+  createSport,
+  getSports
 };
-export default circuitActions;
+export default sportActions;

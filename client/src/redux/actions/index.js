@@ -1,2 +1,2 @@
-export * from "./circuitActions";
+export * from "./sportActions";
 export * from "./userActions";
