@@ -1,0 +1,46 @@
+// @font-face {
+//   font-family: "fira_sanslight";
+//   src: url("./fonts/firasans-light-webfont.woff2") format("woff2"),
+//     url("./fonts/FiraSans-Light.ttf") format("ttf"),
+//     url("./fonts/firasans-light-webfont.woff") format("woff");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+@font-face {
+  font-family: "montserrat";
+  src: /*url("./fonts/Montserrat-Italic-VariableFont_wght.ttf") format("ttf"),*/ url("./fonts/Montserrat-VariableFont_wght.ttf")
+    format("ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* body {
+  margin: 0;
+  font-family: "fira_sanslight";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+#root {
+  // font-family: "fira_sanslight";
+  font-family: "montserrat", sans-serif;
+  font-weight: 100;
+}
+
+.imageLogo {
+  height: 100px;
+  width: 100px;
+}
+
+.imgPilote {
+  height: 400px;
+  width: 500px;
+  /* margin-left: auto;
+  margin-right: auto;
+  display: block; */
+}
+
+/* .imgPilote:hover {
+  transform: scale(3);
+  cursor: pointer;
+} */

@@ -1,0 +1,97 @@
+.Login {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 100px;
+  font-weight: 100;
+}
+
+.Navigation {
+  margin-top: 160px;
+}
+.Notification div {
+  z-index: 9999;
+}
+
+.navbar-site {
+  background-color: #e6d1f2;
+  opacity: 0.8;
+  @media (max-width: 992px) {
+    opacity: 1;
+  }
+}
+.container-nav {
+  column-gap: 40px;
+  @media (max-width: 992px) {
+    column-gap: 0px;
+    justify-content: flex-start;
+  }
+}
+.App-link {
+  color: #61dafb;
+}
+
+.Navigation .container-nav .navbar-nav .nav-link {
+  color: black;
+}
+
+.Navigation .container-nav .navbar-nav .nav-link:hover,
+.Navigation .container-nav .navbar-nav .nav-link.active,
+.Navigation .container-nav .create-button:hover {
+  color: #ffffff;
+  background-color: #b19cd8;
+}
+
+.title-page {
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+}
+
+.title-page:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin: 5px auto;
+  width: 2em;
+  height: 3px;
+  background: #b19cd8;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Login .form-select {
+  font-weight: 100;
+}
+
+.buttons .buttons-bottom {
+  color: #ffffff;
+  background-color: #b19cd8;
+  border-color: #b19cd8;
+}
+.buttons .buttons-bottom:hover {
+  color: #ffffff;
+  background-color: #e6d1f2;
+  border-color: #e6d1f2;
+}
+
+.form-create {
+  margin-top: 30px;
+}
+
+.p-sportifs {
+  margin-bottom: 0.5rem;
+}
+
+.banniere {
+  width: 100%;
+  height: 500px;
+}
+.Accueil > .title-page {
+  margin-bottom: 50px;
+}
