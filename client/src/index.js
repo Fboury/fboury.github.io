@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.scss";
 import "antd/dist/antd.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";

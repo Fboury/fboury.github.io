@@ -22,9 +22,9 @@ const createSport = (sport, navigate) => dispatch => {
       console.log("test de l'erreur", err.response);
     });
 };
-const getSports = anneeEnCours => dispatch => {
+const getSports = () => dispatch => {
   return sportApi
-    .getSports(anneeEnCours)
+    .getSports()
     .then(res => {
       dispatch({
         type: sportConstants.GET_SPORTS,

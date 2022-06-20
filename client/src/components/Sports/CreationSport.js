@@ -11,18 +11,18 @@ import sportActions from "../../redux/actions/sportActions";
 import { FormInputSelect } from "../Commons/FormSelect/FormInputSelect";
 import { sportConstants } from "../../constants/sportConstants";
 
-export function CreationSport() {
+const CreationSport = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [formErrors, setFormErrors] = useState({});
   const [formValues, setFormValues] = useState({
     titreSeance: "",
+    typeSeance: "Course à pied",
     duree: "",
-    difficulte: "",
+    difficulte: "Fastoche",
     imageTrace: "",
-    descriptionSport: "",
-    dateSeance: "",
+    dateSeance: new Date().toLocaleDateString("fr"),
     meteo: "",
     sportifs: []
   });
@@ -30,9 +30,9 @@ export function CreationSport() {
   const {
     titreSeance,
     duree,
+    typeSeance,
     difficulte,
     imageTrace,
-    descriptionSport,
     dateSeance,
     meteo,
     sportifs
@@ -45,6 +45,9 @@ export function CreationSport() {
   const validateForm = values => {
     let errors = {};
     for (const [key, value] of Object.entries(values)) {
+      console.log("key", key);
+      console.log("value", value);
+
       if (!value) {
         errors[key] = errorHelper.buildErrorFieldRequired(
           formConstants[key].libelleChamp
@@ -66,23 +69,25 @@ export function CreationSport() {
    * Fonction appelée au clic sur le bouton de validation du formulaire
    */
   const send = () => {
-    if (validateForm(formValues)) {
-      dispatch(
-        sportActions.createSport(
-          {
-            titreSeance,
-            duree,
-            difficulte,
-            imageTrace,
-            descriptionSport,
-            dateSeance,
-            meteo,
-            sportifs
-          },
-          navToSports
-        )
-      );
-    }
+    console.log("validateForm(formValues)", validateForm(formValues));
+
+    // if (validateForm(formValues)) {
+    dispatch(
+      sportActions.createSport(
+        {
+          titreSeance,
+          duree,
+          typeSeance,
+          difficulte,
+          imageTrace,
+          dateSeance,
+          meteo,
+          sportifs
+        },
+        navToSports
+      )
+    );
+    //}
   };
 
   /**
@@ -111,7 +116,7 @@ export function CreationSport() {
   return (
     <div className="Login">
       <h2 className="title-page">Création de la séance</h2>
-      <Form>
+      <Form className="form-create">
         <FormInput
           handleChange={handleChange}
           formField={formConstants["titreSeance"]}
@@ -148,7 +153,7 @@ export function CreationSport() {
           formErrors={formErrors}
         />
         <div>
-          Qui était la ?
+          <p className="p-sportifs">Qui était la ?</p>
           <Select
             closeMenuOnSelect={false}
             isMulti
@@ -158,7 +163,6 @@ export function CreationSport() {
             noOptionsMessage={() => "Y'a tout le monde"}
           />
         </div>
-
         <FormInputSelect
           handleChange={handleChange}
           formField={formConstants["difficulte"]}
@@ -166,23 +170,24 @@ export function CreationSport() {
           value={formValues["difficulte"]}
           formErrors={formErrors}
         />
-        <FormInput
+        {/* <FormInput
           handleChange={handleChange}
           formField={formConstants["imageTrace"]}
           type="file"
           value={formValues["imageTrace"]}
           formErrors={formErrors}
-        />
+        /> */}
       </Form>
       <div className="buttons">
-        <Button className="submit-button my-3" onClick={navToSports}>
+        <Button className="buttons-bottom my-3" onClick={navToSports}>
           Retour
         </Button>
 
-        <Button className="submit-button my-3" onClick={send} type="submit">
+        <Button className="buttons-bottom my-3" onClick={send} type="submit">
           Créer la séance
         </Button>
       </div>
     </div>
   );
-}
+};
+export default CreationSport;

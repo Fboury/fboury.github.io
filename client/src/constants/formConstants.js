@@ -49,7 +49,7 @@ export const formConstants = {
   },
   meteo: {
     libelleChamp: "Météo au cours de la séance",
-    nomChamp: "dateSeance"
+    nomChamp: "meteo"
   },
   sportifs: {
     libelleChamp: "Qui était la ?",

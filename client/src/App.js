@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Dashboard } from "./components/Dashboard/Dashboard.js";
 import { Login } from "./components/Login/Login.js";
 import { Signup } from "./components/Signup/Signup.js";
-import "./App.css";
+import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { PrivateRoute } from "./PrivateRoute.js";
 import { Navigation } from "./components/Commons/Navigation/Navigation.js";
@@ -12,7 +12,7 @@ import { Sports } from "./components/Sports/Sports.js";
 import { useSelector } from "react-redux";
 import { getNotifications } from "./redux/reducers/index.js";
 import Notification from "./components/Commons/Notifications/Notification.js";
-import { CreationSport } from "./components/Sports/CreationSport.js";
+import CreationSport from "./components/Sports/CreationSport.js";
 
 export function App() {
   const notifications = useSelector(getNotifications);

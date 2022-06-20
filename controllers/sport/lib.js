@@ -45,16 +45,16 @@ async function createSport(req, res) {
 
 async function getSports(req, res) {
   try {
-    const findSports = await Sport.find({ anneeEnCours });
+    const findSports = await Sport.find();
+    console.log("findSports", findSports);
 
     if (!findSports || !findSports.length)
       return res.status(401).json({
-        text: `Aucun sport pour l'année ${anneeEnCours}`
+        text: `Aucun sport`
       });
 
     return res.status(200).json({
       sports: findSports,
-      anneeEnCours,
       text: "Récupération des sports réussie"
     });
   } catch (error) {

@@ -47,6 +47,10 @@ export const sportConstants = {
       label: "Marche"
     },
     {
+      value: "Hiit",
+      label: "Hiit"
+    },
+    {
       value: "Randonnée",
       label: "Randonnée"
     }
