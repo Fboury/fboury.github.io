@@ -88,10 +88,61 @@
   margin-bottom: 0.5rem;
 }
 
+.Accueil > .title-page {
+  margin-bottom: 50px;
+}
+
+// Partie css images
+
 .banniere {
   width: 100%;
   height: 500px;
 }
-.Accueil > .title-page {
-  margin-bottom: 50px;
+
+.img-link {
+  width: 200px;
+  height: 200px;
+}
+
+.div-images {
+  display: flex;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 60px;
+  justify-content: center;
+  column-gap: 15%;
+}
+/* Parent Container */
+.content-img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* Child Text Container */
+.content-img div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #e6d1f2;
+  color: black;
+  margin-bottom: 5px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+/* Hover on Parent Container */
+.content-img:hover {
+  cursor: pointer;
+}
+
+.content-img:hover div {
+  width: 200px;
+  padding: 8px 15px;
+  visibility: visible;
+  opacity: 1;
 }

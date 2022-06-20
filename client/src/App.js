@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import { getNotifications } from "./redux/reducers/index.js";
 import Notification from "./components/Commons/Notifications/Notification.js";
 import CreationSport from "./components/Sports/CreationSport.js";
+import { Footer } from "./components/Commons/Footer/Footer.js";
 
 export function App() {
   const notifications = useSelector(getNotifications);
@@ -37,6 +38,7 @@ export function App() {
           }
         />
       </Routes>
+      <Footer />
     </div>
   );
 }
