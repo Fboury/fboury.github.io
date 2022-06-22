@@ -4,7 +4,7 @@ export function Accueil() {
   return (
     <div className="Accueil">
       <h2 className="title-page">Le petit monde de Bahia et Boubou</h2>
-      <img className="banniere" src="images/banniere.png"></img>
+      <img className="banniere-accueil" src="images/banniere.png"></img>
       <div className="div-images">
         <div className="content-img">
           <img className="img-link" src="images/barcelone.png"></img>

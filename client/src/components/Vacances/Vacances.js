@@ -2,12 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import sportActions from "../../redux/actions/sportActions";
-import { getSports } from "../../redux/reducers/sportReducer";
 
-export function Sports() {
+export function Vacances() {
   const dispatch = useDispatch();
-
-  const sports = useSelector(getSports);
 
   useEffect(() => {
     dispatch(sportActions.getSports());
@@ -15,8 +12,8 @@ export function Sports() {
 
   return (
     <div className="Sports">
-      <h2 className="title-page">Sports</h2>
-      <img className="section-banniere" src="images/section-banniere.png"></img>
+      <h2 className="title-page">Vacances</h2>
+      <img className="section-banniere" src="images/suisse.png"></img>
     </div>
   );
 }

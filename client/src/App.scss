@@ -1,11 +1,8 @@
-.Login {
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  margin-top: 100px;
-  font-weight: 100;
+.App {
+  height: 100%;
 }
 
+// ----------------- NAVBAR--------------- //
 .Navigation {
   margin-top: 160px;
 }
@@ -27,9 +24,6 @@
     justify-content: flex-start;
   }
 }
-.App-link {
-  color: #61dafb;
-}
 
 .Navigation .container-nav .navbar-nav .nav-link {
   color: black;
@@ -40,6 +34,12 @@
 .Navigation .container-nav .create-button:hover {
   color: #ffffff;
   background-color: #b19cd8;
+}
+
+.Navigation .container-nav .create-button {
+  @media (max-width: 992px) {
+    display: none;
+  }
 }
 
 .title-page {
@@ -65,7 +65,17 @@
   justify-content: space-between;
 }
 
-.Login .form-select {
+// ---------- Creation + Buttons ----------- //
+
+.creation-div {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 100px;
+  font-weight: 100;
+}
+
+.creation-div .form-select {
   font-weight: 100;
 }
 
@@ -88,15 +98,22 @@
   margin-bottom: 0.5rem;
 }
 
-.Accueil > .title-page {
+.Accueil > .title-page,
+.Sports > .title-page {
   margin-bottom: 50px;
 }
 
-// Partie css images
+// ----------- Partie css images -------------- //
 
-.banniere {
+.banniere-accueil {
   width: 100%;
   height: 500px;
+}
+
+.section-banniere {
+  width: 80%;
+  height: 500px;
+  margin-left: 10%;
 }
 
 .img-link {
@@ -112,7 +129,7 @@
   justify-content: center;
   column-gap: 15%;
 }
-/* Parent Container */
+
 .content-img {
   position: relative;
   width: 200px;
@@ -121,7 +138,6 @@
   margin-right: 10px;
 }
 
-/* Child Text Container */
 .content-img div {
   position: absolute;
   bottom: 0;
@@ -135,7 +151,6 @@
   transition: visibility 0s, opacity 0.5s linear;
 }
 
-/* Hover on Parent Container */
 .content-img:hover {
   cursor: pointer;
 }
@@ -145,4 +160,31 @@
   padding: 8px 15px;
   visibility: visible;
   opacity: 1;
+}
+
+// ------------ Footer ------------- //
+.Footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  background-color: #e6d1f2;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instagram {
+  display: flex;
+  column-gap: 20px;
+}
+
+.insta-logo {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
 }

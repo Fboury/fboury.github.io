@@ -8,14 +8,11 @@ import navHelper from "../../../helpers/navHelper";
 export function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
-  const width = window.innerWidth;
 
   /**
    * Gère le clic sur le bouton ajouter et redirige vers la bonne page
    */
   const handleClickAdd = () => {
-    console.log("location", location);
-
     switch (location.pathname) {
       case "/sports":
         navigate("sports/creer-sport");
@@ -57,7 +54,7 @@ export function Navigation() {
               <Nav.Link href="/livres">Livres</Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          {navHelper.buildAddMessage(location.pathname) && width > 992 && (
+          {navHelper.buildAddMessage(location.pathname) && (
             <Button
               className="create-button"
               variant="outline-dark"

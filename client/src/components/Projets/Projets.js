@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import sportActions from "../../redux/actions/sportActions";
 import { getSports } from "../../redux/reducers/sportReducer";
 
-export function Sports() {
+export function Projets() {
   const dispatch = useDispatch();
 
   const sports = useSelector(getSports);
@@ -15,8 +15,8 @@ export function Sports() {
 
   return (
     <div className="Sports">
-      <h2 className="title-page">Sports</h2>
-      <img className="section-banniere" src="images/section-banniere.png"></img>
+      <h2 className="title-page">Projets</h2>
+      <img className="section-banniere" src="images/maison.png"></img>
     </div>
   );
 }
